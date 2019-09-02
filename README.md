@@ -7,3 +7,7 @@ generator.py  ---- Data loader
 new_models.py ---- Define models    
 scores.py     ---- For calculating evaluation metrics   
 
+Requirements:   
+Keras 2.2.4 + Numpy 
+
+
