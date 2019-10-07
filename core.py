@@ -76,11 +76,11 @@ def DoTrain(train_list, val_list):
 
     # when train a new model -----------------------------------------
 
-    model = new_models.WRF_decoder_model_with_x_att_v6_1()
-    model = new_models.truthonly_model_v6_plain()
-    model = new_models.StepDeep_model()
-    model = new_models.WRF_decoder_model_wrfonly_v6_plain()
-    model = new_models.WRF_decoder_model_with_x_att_v6_plain()
+    #model = new_models.ADSNet_Plain()
+    #model = new_models.ADSNet_W()
+    #model = new_models.ADSNet_O()
+    model = new_models.ADSNet()
+    #model = new_models.StepDeep_model()
 
     # print(model.summary())
 
