@@ -15,6 +15,11 @@ ncFileDir_2016 = 'data/media-2016/'
 npyWRFFileDir = 'data/wrf_npy_6-24/'                # WRF simulation file path
 GuiTruthOriGridDir = 'data/guishan_grid_4x4/'       # lightning observations file path
 
+variables3d = ['U', 'V', 'W', 'T', 'P','QVAPOR','QCLOUD','QRAIN','QICE','QHAIL',
+               'QGRAUP','QSNOW','QEI','QEG','QEC','QES','QER','QEH','QESUM','REFL_10CM',
+               'QNICE', 'QNSNOW', 'QNGRAUPEL']
+variables2d = ['Q2', 'T2', 'TH2', 'PSFC', 'U10', 'V10', 'OLR', 'PBLH','W_max']
+sumVariables2d = ['RAINC','RAINNC','HAILNC','FN']
 variables3d_ave3 = ['QICE_ave3','QSNOW_ave3','QGRAUP_ave3']
 param_list = ['QICE_ave3','QSNOW_ave3','QGRAUP_ave3','W_max','RAINNC']
 
@@ -33,9 +38,7 @@ if mode_3d == 'ave':
 elif mode_3d == 'select':
     wrf_fea_dim = 0
     for param in param_list:
-        if param in variables3d:
-            wrf_fea_dim += len(highlevels)
-        elif param in variables2d or param in sumVariables2d:
+        if param in sumVariables2d:
             wrf_fea_dim += 1
         elif param in variables3d_ave3:
             wrf_fea_dim += 9
