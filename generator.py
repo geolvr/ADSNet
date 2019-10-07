@@ -39,6 +39,8 @@ elif mode_3d == 'select':
             wrf_fea_dim += 1
         elif param in variables3d_ave3:
             wrf_fea_dim += 9
+            
+fea_dim = wrf_fea_dim
 
 if label_type == 'ori':
     GuiTruthGridDir = GuiTruthOriGridDir
