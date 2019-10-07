@@ -3,7 +3,7 @@ from keras.models import load_model
 from keras import optimizers
 from generator import DataGenerator, PredictDataGenerator,\
           getTimePeriod,ncFileDir_2016,ncFileDir_2017,M,npyWRFFileDir, getHoursGridFromNC, \
-         getHoursGridFromNPY, getOneHourGridFromNPY, num_frames, wrf_fea_dim, \
+         getHoursGridFromNPY, num_frames, wrf_fea_dim, \
          param_list, fea_dim, GuiTruthGridDir, num_frames_truth
 import os
 import numpy as np
