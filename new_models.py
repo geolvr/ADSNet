@@ -144,6 +144,11 @@ def ADSNet_O():
     decoder_outputs = Reshape((-1, 159 * 159, 1), input_shape=(-1, 159, 159, 1))(decoder_outputs)
     return Model(encoder_inputs, decoder_outputs, name='ADSNet_O')
 
+def _min_max(x,axis):
+    t1 = x - K.min(x,axis=axis,keepdims=True)
+    t2 = K.max(x,axis=axis,keepdims=True) - K.min(x,axis=axis,keepdims=True) + 1e-20
+    return t1 / t2
+
 def ADSNet():
     # encoder: layers definition && data flow  --------------------------------------
     # CNN module 1 -------------------------------------
